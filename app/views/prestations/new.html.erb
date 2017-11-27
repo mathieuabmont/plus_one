@@ -1,0 +1,7 @@
+<% if current_user %>
+  <%= simple_form_for @prestation do |f| %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.submit "add a prestation", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
