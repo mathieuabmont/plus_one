@@ -5,5 +5,4 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:show]
-  get '/components', to: 'pages#components'
 end
