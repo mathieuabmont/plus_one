@@ -2,3 +2,24 @@
 <%= @booking.date %>
 <%= @booking.location %>
 <%= @booking.duration %>
+<%= @booking.user %>
+
+
+<div class='container'>
+
+  <div class="row">
+   <% @booking.prestation %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>');">
+        <%= link_to "", booking_path(booking), class: 'card-link'%>
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+        </div>
+
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+
+</div>
