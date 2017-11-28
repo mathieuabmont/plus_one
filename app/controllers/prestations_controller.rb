@@ -1,15 +1,18 @@
 class PrestationsController < ApplicationController
+
   def index
-    @prestations = Prestation.all
+    @prestations = policy_scope(Prestation)
   end
 
   def show
     @prestation = Prestation.find(params[:id])
+    authorize @prestation
     @booking = Booking.new
   end
 
   def new
     @prestation = Prestation.new
+    authorize @prestation
   end
 
   def create
