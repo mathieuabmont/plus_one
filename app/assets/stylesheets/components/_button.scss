@@ -1,0 +1,18 @@
+.btn-plusone_large {
+  color: #FF4F61;
+  padding: 10px 15px;
+  border: 1px, solid, #FF0108;
+  border-radius: 4px;
+  font-weight: bold;
+  // background: #6AD58B;
+  transition: background 0.7s ease;
+  text-decoration: none;
+}
+
+.btn-plusone_large:hover {
+  opacity: 1;
+  background: #FF4F61;
+  opacity: 0,5;
+  text-decoration: none;
+  color: white;
+}
