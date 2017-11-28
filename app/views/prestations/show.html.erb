@@ -1,3 +1,15 @@
 
 <%= @prestation.description %>
 <%= @prestation.price %>
+
+<hr>
+
+<h2>Booker cette personne</h2>
+
+<%= simple_form_for [@prestation, @booking] do |f| %>
+  <%= f.input :description %>
+  <%= f.input :date %>
+  <%= f.input :location %>
+  <%= f.input :duration %>
+  <%= f.button :submit %>
+<% end %>
