@@ -1,0 +1,48 @@
+.content{
+  display: flex;
+  justify-content: space-around;
+  // align-items: center;
+}
+
+.card-container {
+  border: 1px ridge #F1E9E3;
+  background: #FBF7F7;
+  padding: 10px;
+  margin-bottom: 300px;
+  margin-top: 30px;
+  width: 450px;
+  height: 90vh;
+  text-align: center;
+}
+
+.simple_form {
+  text-align: center;
+  font-size: 13px;
+  .form-control{
+    font-size: 12px;
+    height: 25px;
+    width: 200px;
+    margin-left: 25px;
+    margin-right: 20px;
+  }
+}
+
+#booking {
+  background-color: #D6E4F0;
+  flex: 0 0 250px;
+  height: 100%;
+  padding: 20px;
+  position: sticky !important;
+  top: 0 !important;
+  margin-top: 150px;
+  border-radius: 2px;
+}
+
+#prestation_description{
+  margin-top: 20px;
+  text-style: none;
+  text-shadow: none;
+  color: black;
+  text-align: justify;
+
+}
