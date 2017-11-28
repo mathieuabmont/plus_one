@@ -1,25 +1,46 @@
-<%= @booking.description %>
-<%= @booking.date %>
-<%= @booking.location %>
-<%= @booking.duration %>
-<%= @booking.user %>
 
-
-<div class='container'>
+<div class='container booking-container'>
 
   <div class="row">
-   <% @booking.prestation %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>');">
-        <%= link_to "", booking_path(booking), class: 'card-link'%>
-        <div class="card-category">Popular</div>
-        <div class="card-description">
+    <div class="col-xs-8 ">
+      <div class="message message-size,">
+        <img class="avatar-message img-circle" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+          <h3>Gab Dehan</h3>
+          <p><%= @booking.date %></p>
         </div>
-
+        <div class="message-body">
+          <p><strong>Your message </strong></p>
+          <p> <%= @booking.prestation.description %></p>
+          <p> <%= @booking.duration %></p>
+          <p> <%= @booking.location %></p>
+        </div>
+        <div class="message-status">
+          <p class="status pending">Pending</p>
+          <i class="fa fa-hourglass-half centered-text" aria-hidden="true"></i>
+        </div>
       </div>
     </div>
 
-    <% end %>
+    <div class="col-xs-4 ">
+      <div class = "card2">
+        <p class="user-name"><%=@booking.user.email%></p>
+        <div class="card-body">
+          <div id="photo-plus">
+            <%= image_tag "soniaidphoto.JPG", height:300 %>
+          </div>
+
+          <div class="footer footer-booking">
+             <ul class="footer-icons">
+                <li><i class="fa fa-star" aria-hidden="true"> age:</i></li>
+                <li><i class="fa fa-heart" aria-hidden="true"> email:</i></li>
+                <li><i class="fa fa-star" aria-hidden="true"> Tel:</i></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>
