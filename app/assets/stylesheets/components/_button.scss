@@ -1,17 +1,59 @@
-.btn-plusone_large {
-  color: #FF4F61;
-  padding: 10px 15px;
-  border: 0.5px, solid, #FF0108;
-  border-radius: 4px;
+.btn-plusone {
+  color: #2ED2D7;
+  padding: 7px 10px;
+  // border: 0.5px, solid, #FF0108;
+  border-radius: 2px;
   font-weight: bold;
   // background: #6AD58B;
   transition: background 0.7s ease;
   text-decoration: none;
 }
 
+.btn-plusone:hover {
+  opacity: 1;
+  background: #26A8D5;
+  opacity: 0,5;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-plusone_regular {
+  color: white;
+  background: #9259BE;
+  padding: 10px 10px;
+  margin: 10px;
+  // border: 0.5px, solid, #FF0108;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: medium;
+  transition: background 0.7s ease;
+  text-decoration: none;
+}
+
+.btn-plusone_regular:hover {
+  opacity: 1;
+  background: #B15AA1;
+  opacity: 0,5;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-plusone_large {
+  color: white;
+  background: #04ECCA;
+  padding: 15px 15px;
+  margin: 3px;
+  // border: 0.5px, solid, #FF0108;
+  border-radius: 2px;
+  font-weight: normal;
+  font-size: x-large;
+  transition: background 0.7s ease;
+  text-decoration: none;
+}
+
 .btn-plusone_large:hover {
   opacity: 1;
-  background: #FF4F61;
+  background: #00A2A8;
   opacity: 0,5;
   text-decoration: none;
   color: white;

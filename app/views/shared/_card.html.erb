@@ -4,6 +4,7 @@
     <h2><%= prestation.description %></h2>
     <p><%= prestation.user %></p>
   </div>
-  <%= link_to '', prestation_path(prestation), class:'card-link' %>
+  <img><%= image_tag "avatar_card_test", class: "card-user avatar-bordered", "data-toggle" => "dropdown" %>
+    <%= link_to '', prestation_path(prestation), class:'card-link' %>
 </div>
 
