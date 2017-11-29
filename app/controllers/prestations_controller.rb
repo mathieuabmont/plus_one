@@ -1,4 +1,5 @@
 class PrestationsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @prestations = policy_scope(Prestation)
@@ -19,6 +20,7 @@ class PrestationsController < ApplicationController
     @prestation = Prestation.new(prestation_params)
     authorize @prestation
     @prestation.user = current_user
+    authorize @prestation
     if @prestation.save
       redirect_to prestation_path(@prestation)
     else
