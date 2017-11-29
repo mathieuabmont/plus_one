@@ -1,13 +1,11 @@
 <div class='container'>
   <div class="content">
-    <div class="card-container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="card" style="">
-            <img src="https://picsum.photos/200/300/?random" alt="random" style="text-align:center"> <!-- user image upload cloudinary -->
-            <p id="prestation_description"><%=  @prestation.description %> </p>
-             <p id="prestation_description"><%= @prestation.price %> €</p>
-          </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="card-container">
+          <img src="https://picsum.photos/200/300/?random" alt="random" style="text-align:center"> <!-- user image upload cloudinary -->
+          <p id="prestation_description"><%=  @prestation.description %> </p>
+          <p id="prestation_price"><%= @prestation.price %> €</p>
         </div>
       </div>
     </div>
