@@ -1,12 +1,13 @@
 class BookingsController < ApplicationController
-  def create
 
-    prestation = Prestation.find(params[:prestation_id])
-    booking = Booking.new(booking_params)
-    booking.prestation = prestation
-    booking.user = current_user
-    booking.save
-    redirect_to booking_path(prestation)
+  def create
+    @prestation = Prestation.find(params[:prestation_id])
+    @booking = Booking.new(booking_params)
+    @booking.prestation = @prestation
+    @booking.user = current_user
+    authorize @booking
+    @booking.save
+    redirect_to booking_path(@prestation)
   end
 
   def show
