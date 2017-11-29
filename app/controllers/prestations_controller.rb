@@ -19,6 +19,7 @@ class PrestationsController < ApplicationController
   def create
     @prestation = Prestation.new(prestation_params)
     @prestation.user = current_user
+    authorize @prestation
     if @prestation.save
       redirect_to prestation_path(@prestation)
     else

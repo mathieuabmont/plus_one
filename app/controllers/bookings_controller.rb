@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  def create
 
+  def create
     @prestation = Prestation.find(params[:prestation_id])
     @booking = Booking.new(booking_params)
     authorize @booking
