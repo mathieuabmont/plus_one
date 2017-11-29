@@ -1,3 +1,7 @@
+.container-fluid {
+  padding-bottom: 20px;
+}
+
 .card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -5,9 +9,6 @@
   background-position: center;
   color: #E6E7E7;
   position: relative;
-  margin-bottom: 15px;
-  padding-bottom: 30px;
-  margin-top: 30px;
   border-radius: 2px;
 }
 .card-user {
