@@ -18,7 +18,6 @@ class PrestationsController < ApplicationController
 
   def create
     @prestation = Prestation.new(prestation_params)
-    authorize @prestation
     @prestation.user = current_user
     authorize @prestation
     if @prestation.save
