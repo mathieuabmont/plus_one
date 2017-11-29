@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     @booking.save
-    redirect_to booking_path(@prestation)
+    redirect_to booking_path(@booking)
   end
 
   def show

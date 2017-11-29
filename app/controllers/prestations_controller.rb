@@ -30,6 +30,6 @@ class PrestationsController < ApplicationController
   private
 
   def prestation_params
-    params.require(:prestation).permit(:price, :description)
+    params.require(:prestation).permit(:price, :description, :date)
   end
 end
