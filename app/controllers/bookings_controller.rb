@@ -13,6 +13,8 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
+    id_prestataire = @booking.user_id
+    @prestataire = User.find(id_prestataire)
   end
 
   private

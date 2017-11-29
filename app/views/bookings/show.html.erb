@@ -1,4 +1,5 @@
 
+
 <div class='container'>
   <div class="booking-container">
     <div class="row">
@@ -11,7 +12,7 @@
           </div>
           <div class="message-body">
             <p><strong>Your message </strong></p>
-            <p> <%= @booking.prestation.description %></p>
+            <p> <%= @booking.description %></p>
             <p> <%= @booking.duration %></p>
             <p> <%= @booking.location %></p>
           </div>
@@ -24,17 +25,18 @@
 
       <div class="col-xs-4 ">
         <div class = "card2">
-          <p class="user-name"><%=@booking.user.email%></p>
+          <p class="user-name"><%=@booking.prestation.user.first_name%></p>
           <div class="card-body">
             <div id="photo-plus">
-              <%= image_tag "soniaidphoto.JPG", height:300 %>
+
+            <%=image_tag 'pouffe.jpg', size:'200x200' %>
             </div>
 
             <div class="footer footer-booking">
                <ul class="footer-icons">
-                  <li><i class="fa fa-heart-o" aria-hidden="true"> :</i></li>
-                  <li><i class="fa fa-envelope-o" aria-hidden="true"> :</i></li>
-                  <li><i class="fa fa-mobile" aria-hidden="true"> :</i></li>
+                  <li><i class="fa fa-heart-o" aria-hidden="true"> : <%=@booking.prestation.user.first_name%></i></li>
+                  <li><i class="fa fa-envelope-o" aria-hidden="true"> :sophie@gmail.com</i></li>
+                  <li><i class="fa fa-mobile" aria-hidden="true"> :06.10.10.10.10</i></li>
                 </ul>
             </div>
           </div>
