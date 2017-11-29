@@ -1,7 +1,19 @@
-<% if current_user %>
-  <%= simple_form_for @prestation do |f| %>
-    <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.submit "add a prestation", class: "btn btn-primary" %>
-  <% end %>
-<% end %>
+<div class="container">
+  <div class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="card">
+          <% if current_user %>
+            <%= simple_form_for @prestation do |f| %>
+              <%= f.input :price %>
+              <%= f.input :description %>
+              <%= f.input :date, as: :date, html5: true%>
+              <%= f.submit "add a prestation", class: "btn btn-primary"%>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

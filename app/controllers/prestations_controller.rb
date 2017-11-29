@@ -17,6 +17,7 @@ class PrestationsController < ApplicationController
 
   def create
     @prestation = Prestation.new(prestation_params)
+    authorize @prestation
     @prestation.user = current_user
     if @prestation.save
       redirect_to prestation_path(@prestation)
@@ -28,6 +29,6 @@ class PrestationsController < ApplicationController
   private
 
   def prestation_params
-    params.require(:prestation).permit(:price, :description)
+    params.require(:prestation).permit(:price, :description, :date)
   end
 end

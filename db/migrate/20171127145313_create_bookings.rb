@@ -1,7 +1,7 @@
 class CreateBookings < ActiveRecord::Migration[5.1]
   def change
     create_table :bookings do |t|
-      t.date :date
+      t.datetime :date
       t.text :description
       t.string :location
       t.integer :duration
