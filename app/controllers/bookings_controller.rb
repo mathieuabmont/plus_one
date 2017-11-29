@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     booking = Booking.new(booking_params)
     booking.prestation = prestation
     booking.user = current_user
+    authorize booking
     booking.save
     redirect_to booking_path(prestation)
   end

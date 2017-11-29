@@ -8,4 +8,8 @@ class BookingPolicy < ApplicationPolicy
   def show?
     record.user == user || record.prestation.user == user
   end
+
+  def create?
+    true
+  end
 end
