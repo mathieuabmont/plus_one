@@ -3,10 +3,12 @@
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
-  color: white;
+  color: #E6E7E7;
   position: relative;
   margin-bottom: 15px;
   padding-bottom: 30px;
+  margin-top: 30px;
+  border-radius: 2px;
 }
 .card-user {
   position: absolute;
@@ -47,4 +49,19 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.card-bgpink {
+
+}
+
+.card-bg {
+
+}
+
+.card-bg1 {
+
+}
+.card-bg1 {
+
 }

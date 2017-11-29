@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def create
+
     prestation = Prestation.find(params[:prestation_id])
     booking = Booking.new(booking_params)
     booking.prestation = prestation
@@ -10,6 +11,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   private
