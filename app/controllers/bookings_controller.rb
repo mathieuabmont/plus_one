@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     booking.prestation = prestation
     booking.user = current_user
     booking.save
-    redirect_to prestation_path(prestation)
+    redirect_to booking_path(prestation)
   end
 
   def show

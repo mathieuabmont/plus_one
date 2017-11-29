@@ -1,14 +1,22 @@
-<%= @prestation.description %>
-<%= @prestation.price %>
-
-<hr>
-
-<h2>Booker cette personne</h2>
-
-<%= simple_form_for [@prestation, @booking] do |f| %>
-  <%= f.input :description %>
-  <%= f.input :date %>
-  <%= f.input :location %>
-  <%= f.input :duration %>
-  <%= f.button :submit %>
-<% end %>
+<div class='container'>
+  <div class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="card-container">
+          <img src="https://picsum.photos/200/300/?random" alt="random" style="text-align:center"> <!-- user image upload cloudinary -->
+          <p id="prestation_description"><%=  @prestation.description %> </p>
+          <p id="prestation_price"><%= @prestation.price %> €</p>
+        </div>
+      </div>
+    </div>
+    <div id="booking">
+      <%= simple_form_for [@prestation, @booking] do |f| %>
+        <%= f.input :description %>
+        <%= f.input :date%>
+        <%= f.input :location%>
+        <%= f.input :duration%>
+        <%= f.button :submit, 'Book!' %>
+      <% end %>
+    </div>
+  </div>
+</div>
