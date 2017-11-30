@@ -59,7 +59,7 @@ p "creating prestations"
   prestation8.user = user3
   #prestation8.remote_photo_url = url8
   prestation8.save!
-p "flats - done"
+p "prestations - done"
 p "creating bookings"
   booking1 = Booking.new(user_id: 2, prestation_id: 1, description: "Hello i would really need you, because my grandmother is soon to die, and she really wants me to have a wife since my big brother William is married and has two kids. However i'm not at all ready, i'd would really appreciate your help for a couple of weeks.", date: "2017-12-1", end_date: "2017-12-31", location: "London")
   booking2 = Booking.new(user_id: 1, prestation_id: 1, description: "2", date: "18/01/2016", end_date: "20/02/2016", location: "London")
