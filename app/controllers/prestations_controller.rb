@@ -2,6 +2,11 @@ class PrestationsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    if params[:query].present?
+          @prestations = Prestation.where(job: params[:query])
+        else
+          @prestations = Prestation.all
+        end
     @prest = policy_scope(Prestation)
     @prestations = Prestation.where.not(latitude: nil, longitude: nil)
 
@@ -12,6 +17,7 @@ class PrestationsController < ApplicationController
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     end
+
   end
 
   def show
