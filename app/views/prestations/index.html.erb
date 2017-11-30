@@ -3,7 +3,7 @@
   <div class="content-map">
     <div class="row">
       <div class="card">
-        <% @prestations.each do |prestation| %>
+        <% @prest.each do |prestation| %>
           <div class="col-xs-12 col-sm-4">
             <%= render 'shared/card', prestation: prestation %>
           </div>
@@ -11,8 +11,9 @@
       </div>
     </div>
 
-    <div id="map" style="width: 100%;height: 600px;" data-markers="<%= @markers.to_json %>"></div>
+    <div id="map" style="width: 100%;height: 600px;" data-markers="<%= @markers.to_json %>">
+    </div>
   </div>
-  
+
 </div>
 
