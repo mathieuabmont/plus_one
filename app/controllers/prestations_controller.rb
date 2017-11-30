@@ -3,6 +3,14 @@ class PrestationsController < ApplicationController
 
   def index
     @prestations = policy_scope(Prestation)
+    @prestations = Prestation.where.not(latitude: nil, longitude: nil)
+
+        @markers = @prestations.map do |presatation|
+          {
+            lat: prestation.latitude,
+            lng: prestation.longitude#,
+            # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+          }
   end
 
   def show
