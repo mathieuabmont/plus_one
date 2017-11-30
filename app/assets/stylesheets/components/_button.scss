@@ -1,17 +1,15 @@
 .btn-plusone {
-  color: #2ED2D7;
+  color: linear-gradient(#FF4F61, #FF0108);
   padding: 7px 10px;
-  // border: 0.5px, solid, #FF0108;
   border-radius: 2px;
   font-weight: bold;
-  // background: #6AD58B;
   transition: background 0.7s ease;
   text-decoration: none;
 }
 
 .btn-plusone:hover {
   opacity: 1;
-  background: #26A8D5;
+  background: linear-gradient(#FF4F61, #FF0108);
   opacity: 0,5;
   text-decoration: none;
   color: white;
@@ -19,7 +17,7 @@
 
 .btn-plusone_regular {
   color: white;
-  background: #9259BE;
+  background: linear-gradient(#FF4F61, #FF0108);
   padding: 10px 10px;
   margin: 10px;
   // border: 0.5px, solid, #FF0108;
@@ -32,7 +30,7 @@
 
 .btn-plusone_regular:hover {
   opacity: 1;
-  background: #B15AA1;
+  background: linear-gradient(45deg, #FF4F61, #FF0108);
   opacity: 0,5;
   text-decoration: none;
   color: white;
@@ -40,7 +38,7 @@
 
 .btn-plusone_large {
   color: white;
-  background: #04ECCA;
+  background: linear-gradient(45deg, #FF4F61, #FF0108);
   padding: 15px 15px;
   margin: 3px;
   // border: 0.5px, solid, #FF0108;
@@ -53,7 +51,7 @@
 
 .btn-plusone_large:hover {
   opacity: 1;
-  background: #00A2A8;
+  background: linear-gradient(45deg, #FF4F61, #FF0108);
   opacity: 0,5;
   text-decoration: none;
   color: white;
