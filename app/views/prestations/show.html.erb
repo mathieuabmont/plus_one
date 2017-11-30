@@ -11,24 +11,12 @@
     </div>
     <div id="booking">
       <%= simple_form_for [@prestation, @booking] do |f| %>
-        <%= f.input :description %>
-        <%= f.input :date, as: :string, input_html: {class: "datepicker"}%>
-        <%= f.input :location%>
-        <%= f.input :duration%>
+        <%= f.input :description, placeholder: 'Describe your need' %>
+        <%= f.input :date, placeholder: "2017-12-4", as: :string, input_html: {class: "datepicker"}%>
+        <%= f.input :end_date, placeholder: "2017-12-5", as: :string, input_html: {class: "datepicker"}%>
+        <%= f.input :location, placeholder: 'London' %>
         <%= f.button :submit, 'Book!', class: "btn-plusone_regular" %>
       <% end %>
     </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-    <h2>Flatpickr Demo</h2>
-
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Go", class: "btn btn-primary" %>
-    <% end %>
   </div>
 </div>
