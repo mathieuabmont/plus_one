@@ -2,16 +2,16 @@ class PrestationsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @prestations = policy_scope(Prestation)
+    @prest = policy_scope(Prestation)
     @prestations = Prestation.where.not(latitude: nil, longitude: nil)
 
-        @markers = @prestations.map do |prestation|
-          {
-            lat: prestation.latitude,
-            lng: prestation.longitude#,
-            # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-          }
-        end
+    @markers = @prestations.map do |prestation|
+      {
+        lat: prestation.latitude,
+        lng: prestation.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
@@ -51,6 +51,6 @@ class PrestationsController < ApplicationController
   private
 
   def prestation_params
-    params.require(:prestation).permit(:price, :description, :date)
+    params.require(:prestation).permit(:price, :description, :job, :location)
   end
 end
