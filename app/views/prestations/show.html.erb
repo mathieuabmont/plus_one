@@ -1,29 +1,36 @@
 <div class='container'>
-  <div class="content">
+  <!-- <div class="content"> -->
     <div class="row">
-      <div class="col-xs-12">
-        <div class="card-container">
-          <img src="https://picsum.photos/200/300/?random" alt="random" style="text-align:center"> <!-- user image upload cloudinary -->
+      <div class="col-xs-8">
+        <div class="card-container text-right" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/450/360/?random')">
+          <h2><%= @prestation.user.first_name %></h2>
+          <h2 id="prestation_job"><%= @prestation.job %></h2>
           <p id="prestation_description"><%=  @prestation.description %> </p>
           <p id="prestation_price"><%= @prestation.price %> €</p>
           <% if policy(@prestation).destroy? %>
-            <%= link_to "Delete", prestation_path(@prestation),
+          <% if current_user == @prestation.user %>
+            <%= link_to prestation_path(@prestation),
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %>
+                  data: { confirm: "Are you sure?" }  do %>
+              <i class="fa fa-ban" aria-hidden="true"></i>
+            <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div id="booking">
+          <%= simple_form_for [@prestation, @booking] do |f| %>
+            <%= f.input :description, placeholder: 'Describe your need' %>
+            <%= f.input :date, placeholder: "2017-12-4", as: :string, input_html: {class: "datepicker"}%>
+            <%= f.input :end_date, placeholder: "2017-12-5", as: :string, input_html: {class: "datepicker"}%>
+            <%= f.input :location, placeholder: 'London' %>
+            <%= f.button :submit, 'Book!', class: "btn-plusone_regular" %>
           <% end %>
         </div>
       </div>
     </div>
-    <div id="booking">
-      <%= simple_form_for [@prestation, @booking] do |f| %>
-        <%= f.input :description, placeholder: 'Describe your need' %>
-        <%= f.input :date, placeholder: "2017-12-4", as: :string, input_html: {class: "datepicker"}%>
-        <%= f.input :end_date, placeholder: "2017-12-5", as: :string, input_html: {class: "datepicker"}%>
-        <%= f.input :location, placeholder: 'London' %>
-        <%= f.button :submit, 'Book!', class: "btn-plusone_regular" %>
-      <% end %>
-    </div>
-  </div>
+  <!-- </div> -->
 </div>
 
 
