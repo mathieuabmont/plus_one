@@ -6,14 +6,14 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.user == user || record.prestation.user
   end
 
   def create?
     true
   end
 
-  def create?
-    true
+  def destroy?
+    record.user == user
   end
 end

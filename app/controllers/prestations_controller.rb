@@ -36,6 +36,18 @@ class PrestationsController < ApplicationController
     end
   end
 
+  def destroy
+    @prestation = Prestation.find(params[:id])
+    authorize @prestation
+    @bookings = @prestation.bookings
+    @bookings.each do |booking|
+      booking.destroy
+    end
+    @prestation.destroy
+
+    redirect_to prestations_path
+  end
+
   private
 
   def prestation_params

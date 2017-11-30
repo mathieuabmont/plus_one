@@ -12,4 +12,8 @@ class PrestationPolicy < ApplicationPolicy
   def show?
     true # Tous les users peuvent voir toutes les prestations
   end
+
+  def destroy?
+    record.user == user
+  end
 end
