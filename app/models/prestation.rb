@@ -7,6 +7,7 @@ class Prestation < ApplicationRecord
   gradiant_green = 'linear-gradient(-90deg, #00A2A8, #04ECCA);'
   gradiant_purple = 'linear-gradient(-90deg, #714FBE, #B15AA1);'
   COLORS = [gradiant_red, gradiant_purple, gradiant_green, gradiant_blue]
+
   belongs_to :user
   has_many :bookings
 end

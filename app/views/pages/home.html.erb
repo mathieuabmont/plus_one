@@ -7,12 +7,14 @@ url(<%= image_path 'cover_2.jpg' %>);">
     <%= link_to "Become a Plus one ", new_prestation_path, :class => "btn-plusone_large" %>
   </div>
 </div>
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <% 3.times do |card| %>
-      <div class="col-xs-12 col-sm-4">
-      <%= render 'shared/card', prestation: @prestation %>
-      </div>
-    <% end %>
+    <div class="card">
+      <% @prestations.each do |prestation| %>
+        <div class="col-xs-12 col-sm-4">
+        <%= render 'shared/card', prestation: prestation %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
