@@ -2,7 +2,8 @@
 url(<%= image_path 'cover_2.jpg' %>);">
   <div class="banner-content">
     <h1 class="ml2"> Plus one </h1>
-    <p>Find your Plus one </p>
+    <p> Sick of third weeling ? </p>
+    <p> We have the person of your dreams ? </p>
     <%= link_to "Looking for a Plus one",prestations_path, :class => "btn-plusone_large"  %>
     <%= link_to "Become a Plus one ", new_prestation_path, :class => "btn-plusone_large" %>
   </div>
@@ -11,7 +12,7 @@ url(<%= image_path 'cover_2.jpg' %>);">
   <div class="row">
     <div class="card">
       <% @prestations.each do |prestation| %>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-3">
         <%= render 'shared/card', prestation: prestation %>
         </div>
       <% end %>
