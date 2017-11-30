@@ -31,11 +31,11 @@
             </div>
 
             <div class="footer footer-booking">
-               <ul class="footer-icons">
-                  <li><i class="fa fa-heart-o" aria-hidden="true"> :</i></li>
-                  <li><i class="fa fa-envelope-o" aria-hidden="true"> :</i></li>
-                  <li><i class="fa fa-mobile" aria-hidden="true"> :</i></li>
-                </ul>
+             <% if policy(@booking).destroy? %>
+               <%= link_to "Delete", booking_path(@booking),
+                     method: :delete,
+                     data: { confirm: "Are you sure?" } %>
+             <% end %>
             </div>
           </div>
         </div>
@@ -43,7 +43,5 @@
 
     </div>
   </div>
-
-
-
 </div>
+

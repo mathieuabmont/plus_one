@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :prestations do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:show]
+  resources :bookings, only: [:show, :destroy]
 end
