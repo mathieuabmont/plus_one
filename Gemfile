@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.1.4'
 gem 'redis'
 
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
@@ -19,6 +20,7 @@ gem 'webpacker'
 gem 'pundit'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+
 
 group :development, :test do
   gem 'pry-byebug'
