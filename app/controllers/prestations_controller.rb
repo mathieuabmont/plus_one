@@ -27,12 +27,13 @@ class PrestationsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @prestation = Prestation.find(params[:id])
-  #   @prestation.destroy
+  def destroy
+    @prestation = Prestation.find(params[:id])
+    authorize @prestation
+    @prestation.destroy
 
-  #   redirect_to prestations_path
-  # end
+    redirect_to prestations_path
+  end
 
   private
 

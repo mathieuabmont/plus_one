@@ -6,6 +6,11 @@
           <img src="https://picsum.photos/200/300/?random" alt="random" style="text-align:center"> <!-- user image upload cloudinary -->
           <p id="prestation_description"><%=  @prestation.description %> </p>
           <p id="prestation_price"><%= @prestation.price %> €</p>
+          <% if policy(@prestation).destroy? %>
+            <%= link_to "Delete", prestation_path(@prestation),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -21,6 +26,4 @@
   </div>
 </div>
 
-<%= link_to "Delete", restaurant_path(restaurant),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
+
