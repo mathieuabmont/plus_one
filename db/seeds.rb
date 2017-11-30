@@ -11,10 +11,16 @@ Prestation.destroy_all
 User.destroy_all
 
 p "creating users"
-  user1 = User.create(email: 'rachel@mail.com', age: 32, gender: "Female" , password: "password", first_name: 'Rachel', last_name: "Markle", picture: "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969122/zz12gka0dadceixpw0a7.jpg")
+url = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969122/zz12gka0dadceixpw0a7.jpg"
+  user1 = User.new(email: 'rachel@mail.com', age: 32, gender: "Female" , password: "password", first_name: 'Rachel', last_name: "Markle")
+  user1.remote_picture_url = url
   user1.save
-  user2 = User.create(email:'harry@mail.com' , age: 29, gender: "Male", password: "password", first_name: "Prince", last_name: "Harry")
-  user3 = User.create(email:'anonyme@mail.com' , age: 30, gender: "Male" , password: "password", first_name: 'James', last_name: "Jonson")
+  user2 = User.new(email:'harry@mail.com' , age: 29, gender: "Male", password: "password", first_name: "Prince", last_name: "Harry")
+  user2.remote_picture_url = url
+  user2.save
+  user3 = User.new(email:'anonyme@mail.com' , age: 30, gender: "Male" , password: "password", first_name: 'James', last_name: "Jonson")
+  user3.remote_picture_url = url
+  user3.save
 
 p "users - done"
 
