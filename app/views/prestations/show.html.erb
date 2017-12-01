@@ -16,8 +16,8 @@
             <% if current_user == @prestation.user %>
               <%= link_to prestation_path(@prestation),
                     method: :delete,
-                    data: { confirm: "Are you sure?" }  do %>
-                <p>Cancel</p>
+                    data: { confirm: "Are you sure?" }, id: "cancel" do %>
+                <p id="cancel">Cancel</p>
               <% end %>
               <% end %>
             <% end %>
