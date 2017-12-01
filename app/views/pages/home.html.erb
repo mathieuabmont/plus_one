@@ -12,13 +12,11 @@ url(<%= image_path 'cover_2.jpg' %>);">
 </div>
 <div class="container">
   <div class="row">
-    <div class="card">
-      <% @prestations.each do |prestation| %>
-        <div class="col-xs-12 col-sm-3">
-        <%= render 'shared/card', prestation: prestation %>
-        </div>
-      <% end %>
-    </div>
+    <% @prestations.each do |prestation| %>
+      <div class="col-xs-12 col-sm-3">
+      <%= render 'shared/card', prestation: prestation %>
+      </div>
+    <% end %>
   </div>
 </div>
 <div class="banner_press_logo">
