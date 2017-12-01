@@ -14,7 +14,7 @@
 
     <div class="col-md-4">
       <div class="card-status">
-        <p>STATUS</p>
+        <p>Waiting for an answer</p>
         <% if policy(@booking).destroy? %>
           <%= link_to "Delete", booking_path(@booking),
                 method: :delete,
@@ -24,6 +24,7 @@
     </div>
 
   </div>
+
   <hr>
 
   <h3> All your bookings </h3>
@@ -33,27 +34,19 @@
       <div class="card" id="card-index">
         <% @bookings.each do |booking| %>
           <div class="col-xs-12 col-sm-3">
-            <%= render 'shared/card', booking.user: booking.user %>
+            <div class="card-booking" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),  url('<%= cl_image_path booking.prestation.user.picture, height: 300, width: 400, crop: :fill %>');">
+              <div class="card-description">
+                <h2><%= booking.prestation.user.first_name %></h2>
+                <p><b><%= booking.prestation.job %></b></p>
+                <p id="prestation_price"><%= booking.prestation.price %> €</p>
+              </div>
+              <%= link_to '', booking_path(booking), class:'card-link' %>
+            </div>
           </div>
         <% end %>
       </div>
     </div>
   </div>
 
-  <hr>
-
-  h3> Looking for another plus one? </h3>
-
-  <div class="cards-container">
-    <div class="row">
-      <div class="card" id="card-index">
-        <% @prestations.each do |prestation| %>
-          <div class="col-xs-12 col-sm-3">
-            <%= render 'shared/card', prestation: prestation %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
 </div>
 

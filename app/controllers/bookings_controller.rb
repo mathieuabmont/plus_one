@@ -14,8 +14,7 @@ class BookingsController < ApplicationController
     @prestations = Prestation.all
     @booking = Booking.find(params[:id])
     authorize @booking
-    @bookings = Booking.all
-    # @bookings.user = current_user
+    @bookings = current_user.bookings
   end
 
   def destroy
