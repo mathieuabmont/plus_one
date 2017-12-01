@@ -134,14 +134,14 @@
   margin-bottom: 10px;
 }
 
-#cancel {
+.cancel-btn {
   text-decoration: none;
-  color: #FF0108;
+  color: #FF0108 !important;
   font-weight: 100;
 }
 
-#cancel:hover {
-  text-decoration: none;
+.cancel-btn:hover {
+  text-decoration: none !important;
   font-weight: 200;
 }
 

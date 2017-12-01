@@ -10,28 +10,22 @@
           <p id="prestation_price"><%= @booking.prestation.price %> €</p>
         </div>
       </div>
-    </div>
-
-    <div class="col-md-4">
       <div class="card-status">
-        <p>Waiting for an answer</p>
+        <i class="fa fa-hourglass-o" aria-hidden="true"></i>
         <% if policy(@booking).destroy? %>
-          <%= link_to "Delete", booking_path(@booking),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
+          <%= link_to "Cancel", booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" }%>
         <% end %>
       </div>
     </div>
 
   </div>
+  <div class="row">
+    <hr>
 
-  <hr>
+    <h3 class="all_bookings"> All your bookings </h3>
 
-  <h3> All your bookings </h3>
-
-  <div class="cards-container">
-    <div class="row">
-      <div class="card" id="card-index">
+    <div class="cards-container">
+      <div class="row">
         <% @bookings.each do |booking| %>
           <div class="col-xs-12 col-sm-3">
             <div class="card-booking" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),  url('<%= cl_image_path booking.prestation.user.picture, height: 300, width: 400, crop: :fill %>');">
@@ -45,8 +39,7 @@
           </div>
         <% end %>
       </div>
-    </div>
   </div>
-
+  </div>
 </div>
 
