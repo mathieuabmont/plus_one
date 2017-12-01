@@ -9,7 +9,7 @@
               <%= simple_form_for @prestation do |f| %>
                 <%= f.input :price, placeholder: "150 €" %>
                 <%= f.input :description, placeholder: "Describe yourself" %>
-                <%= f.input :job, collection: ["Kid", "Wife", "Lawyer", "Farmer", "Prince"] %>
+                <%= f.input :job, collection: ["Kid", "Wife", "Lawyer", "Farmer", "Prince", "Mother", "Singer", "Queen", "Actress", "Actor"] %>
                 <%= f.input :location, placeholder: "Bordeaux" %>
                 <%= f.submit "Add", class: "btn-new-prestation"%>
               <% end %>
