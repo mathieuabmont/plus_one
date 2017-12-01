@@ -11,66 +11,94 @@ Prestation.destroy_all
 User.destroy_all
 
 p "creating users"
-url = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969122/zz12gka0dadceixpw0a7.jpg"
-  user1 = User.new(email: 'rachel@mail.com', age: 32, gender: "Female" , password: "password", first_name: 'Rachel', last_name: "Markle")
-  user1.remote_picture_url = url
-  user1.save
-  user2 = User.new(email:'harry@mail.com' , age: 29, gender: "Male", password: "password", first_name: "Prince", last_name: "Harry")
-  user2.remote_picture_url = url
-  user2.save
-  user3 = User.new(email:'anonyme@mail.com' , age: 30, gender: "Male" , password: "password", first_name: 'James', last_name: "Jonson")
-  user3.remote_picture_url = url
-  user3.save
+url_rachel = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969122/zz12gka0dadceixpw0a7.jpg"
+url_harry = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969104/pcjqwwqohxsrxb9vamdv.jpg"
+url_daenarys = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969131/blf7pz3rahkwvztin4zr.jpg"
+url_kid = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969146/gfqotzthqwast6u8bdb9.jpg"
+url_justin = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969154/pmbnttowzzpxkkknnvbf.jpg"
+url_jess = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969160/mregs9hvvjhbacmbm3o5.jpg"
+url_tommy = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969167/xjdfehdzzgnavjzagz4e.jpg"
+url_dom = "http://res.cloudinary.com/dfosxgid7/image/upload/v1512127014/zjfnhctaglwqrhsbkj2n.jpg"
+url_chuck = "http://res.cloudinary.com/dfosxgid7/image/upload/v1512134909/bpzyb0mw9aby1chm053a.jpg"
+
+user_rachel = User.new(email: 'rachel@mail.com', age: 32, gender: "Female" , password: "password", first_name: 'Rachel', last_name: "Markle")
+user_rachel.remote_picture_url = url_rachel
+user_rachel.save
+
+user_harry = User.new(email:'harry@mail.com' , age: 29, gender: "Male", password: "password", first_name: "Harry", last_name: "King")
+user_harry.remote_picture_url = url_harry
+user_harry.save
+
+user_daenarys = User.new(email:'daenarys@mail.com' , age: 27, gender: "Female" , password: "password", first_name: 'Daenarys', last_name: "Dragon")
+user_daenarys.remote_picture_url = url_daenarys
+user_daenarys.save
+
+user_kid = User.new(email:'kid@mail.com' , age: 12, gender: "Male", password: "password", first_name: "Alan", last_name: "Bobby")
+user_kid.remote_picture_url = url_kid
+user_kid.save
+
+user_justin = User.new(email:'justin@mail.com' , age: 35, gender: "Male", password: "password", first_name: "Justin", last_name: "Timberlake")
+user_justin.remote_picture_url = url_justin
+user_justin.save
+
+user_jess = User.new(email:'jess@mail.com' , age: 32, gender: "Female" , password: "password", first_name: 'Jessica', last_name: "Alba")
+user_jess.remote_picture_url = url_jess
+user_jess.save
+
+user_tommy = User.new(email:'tommy@mail.com' , age: 22, gender: "Male", password: "password", first_name: "Tommy", last_name: "Chouchou")
+user_tommy.remote_picture_url = url_tommy
+user_tommy.save
+
+user_dom = User.new(email:'dominique@mail.com' , age: 65, gender: "Male", password: "password", first_name: "Dominique", last_name: "Strau")
+user_dom.remote_picture_url = url_dom
+user_dom.save
+
+user_chuck = User.new(email:'chuck@mail.com' , age: 100, gender: "Male", password: "password", first_name: "Chucke", last_name: "Noris")
+user_chuck.remote_picture_url = url_chuck
+user_chuck.save
 
 p "users - done"
 
 p "creating prestations"
   #url1 = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969122/zz12gka0dadceixpw0a7.jpg"
-  prestation1 = Prestation.new(job: "wife", description: "Hello i am an american actress, I am able to be whoever you want me to be wife queen princess lawyer you name it i could be the wife of your dreams so go ahead just book me I'll be the perfect girl for you", price: 43, location: "London")
-  prestation1.user = user1
-  # prestation1.remote_photo_url = url1
-  prestation1.save!
-  #url2 = "http://res.cloudinary.com/dp7vcrxlv/image/upload/v1512041036/neonbrand-381372_hozxae.jpg"
-  prestation2 = Prestation.new( job: "Prince", description: "Hello I am prince harry if you are intrested in renting me for a couple of days to prove to your parents that you have what it takes to date a prince im the one for you. Don't worry i'll will not show them my willy", price: 66, location: "London")
-  prestation2.user = user2
-  #prestation2.remote_photo_url = url2
-  prestation2.save!
-  #url3 = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969167/xjdfehdzzgnavjzagz4e.jpg"
-  prestation3 = Prestation.new(job: "farmer", description: "", price: 113, location: "Secret log cabin")
-  prestation3.user = user3
-  #prestation3.remote_photo_url = url3
-  prestation3.save!
-  #url4 = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969167/xjdfehdzzgnavjzagz4e.jpg"
-  prestation4 = Prestation.new(job: "farmer", description: "", price: 211, location: "Arty Loft")
-  prestation4.user = user3
-  #prestation4.remote_photo_url = url4
-  prestation4.save!
-  #url5 = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969167/xjdfehdzzgnavjzagz4e.jpg"
-  prestation5 = Prestation.new(job: "farmer", description: "cool during the warmer summer days.", price: 98, location: "Cozy Chalet")
-  prestation5.user = user3
-  #prestation5.remote_photo_url = url5
-  prestation5.save!
-  #url6 = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969167/xjdfehdzzgnavjzagz4e.jpg"
-  prestation6 = Prestation.new( job: "farmer", description: "", price: 72, location: "Mediterranean Mansion")
-  prestation6.user = user3
-  #prestation6.remote_photo_url = url6
-  prestation6.save!
-  #url7 = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969167/xjdfehdzzgnavjzagz4e.jpg"
-  prestation7 = Prestation.new(job: "farmer", description: "", price: 80, location: "Modern Luxury")
-  prestation7.user = user3
-  #prestation7.remote_photo_url = url7
-  prestation7.save!
-  #url8 = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969167/xjdfehdzzgnavjzagz4e.jpg"
-  prestation8 = Prestation.new( job: "farmer", description: "", price: 110, location: "Southern Charm")
-  prestation8.user = user3
-  #prestation8.remote_photo_url = url8
-  prestation8.save!
+  prestation_rachel = Prestation.new(job: "Wife", description: "Hello i am an american actress, I am able to be whoever you want me to be wife queen princess lawyer you name it i could be the wife of your dreams so go ahead just book me I'll be the perfect girl for you", price: 5000, location: "hyde park")
+  prestation_rachel.user = user_rachel
+  prestation_rachel.save!
+
+  prestation_daenarys = Prestation.new(job: "Wife", description: "Hey everyone I’m Princess Daenerys Targaryen, also known as Daenerys Stormborn, i’m one of the last confirmed members of House Targaryen, along with my older brother Viserys, who refers to me as Dany. I’m the youngest child of King Aerys II Targaryen and his sister-wife, Queen Rhaella. If you rent me you could also rent my three dragons xoxo", price: 43, location: "covent garden")
+  prestation_daenarys.user = user_daenarys
+  prestation_daenarys.save!
+
+  prestation_kid = Prestation.new(job: "Kid", description: "Hello i am an american actress, I am able to be whoever you want me to be wife queen princess lawyer you name it i could be the wife of your dreams so go ahead just book me I'll be the perfect girl for you", price: 150, location: "earl's court")
+  prestation_kid.user = user_kid
+  prestation_kid.save!
+
+  prestation_justin = Prestation.new(job: "Singer", description: "Hey I’m Justin in 2002, i decided to pursue a solo career, debuting with the hit song “Like I Love You.” Later that year, i released my first solo album, Justified, which sold more than 7 million copies worldwide. I received two Grammy Awards in 2004 for Best Pop Vocal Album and Best Male Pop Vocal Performance. The wins came on the heels of a controversial Super Bowl performance with Janet Jackson in which I tore off a portion of Jackson’s costume revealing her bare breast. That was pretty awesome, so if you want to rent me go ahead.", price: 79, location: "clapham junction")
+  prestation_justin.user = user_justin
+  prestation_justin.save!
+
+  prestation_jess = Prestation.new(job: "Wife", description: "Hey I’m Jessica Marie Alba is an American actress and businesswoman. She has won various awards for her acting, including the Choice Actress Teen Choice Award and Saturn Award for Best Actress on Television, and a Golden Globe nomination for her lead role in the television series Dark Angel.", price: 99, location: "south kensington")
+  prestation_jess.user = user_jess
+  prestation_jess.save!
+
+  prestation_tommy = Prestation.new(job: "Farmer", description: "Hello i am an american actress, I am able to be whoever you want me to be wife queen princess lawyer you name it i could be the wife of your dreams so go ahead just book me I'll be the perfect girl for you", price: 210, location: "camdem")
+  prestation_tommy.user = user_tommy
+  prestation_tommy.save!
+
+  prestation_dom = Prestation.new(job: "Farmer", description: "Hello i am an american actress, I am able to be whoever you want me to be wife queen princess lawyer you name it i could be the wife of your dreams so go ahead just book me I'll be the perfect girl for you", price: 1000, location: "king's cross")
+  prestation_dom.user = user_dom
+  prestation_dom.save!
+
+  prestation_chuck = Prestation.new(job: "Farmer", description: "Hello i am an american actress, I am able to be whoever you want me to be wife queen princess lawyer you name it i could be the wife of your dreams so go ahead just book me I'll be the perfect girl for you", price: 65, location: "buckingham palace")
+  prestation_chuck.user = user_chuck
+  prestation_chuck.save!
+
+
+
 p "prestations - done"
 p "creating bookings"
-  booking1 = Booking.new(user_id: 2, prestation_id: 1, description: "Hello i would really need you, because my grandmother is soon to die, and she really wants me to have a wife since my big brother William is married and has two kids. However i'm not at all ready, i'd would really appreciate your help for a couple of weeks.", date: "2017-12-1", end_date: "2017-12-31", location: "London")
-  booking2 = Booking.new(user_id: 1, prestation_id: 1, description: "2", date: "18/01/2016", end_date: "20/02/2016", location: "London")
-  booking3 = Booking.new(user_id: 1, prestation_id: 1, description: "4", date: "02/02/2016", end_date: "06/02/2016", location: "London")
+  booking1 = Booking.new(user_id: 2, prestation_id: 2, description: "Hello i would really need you, because my grandmother is soon to die, and she really wants me to have a wife since my big brother William is married and has two kids. However i'm not at all ready, i'd would really appreciate your help for a couple of weeks.", date: "2017-12-1", end_date: "2017-12-31", location: "London")
+  booking2 = Booking.new(user_id: 2, prestation_id: 5, description: "2", date: "18/01/2016", end_date: "20/02/2016", location: "London")
   booking1.save
   booking2.save
-  booking3.save
 p "bookings - done"
