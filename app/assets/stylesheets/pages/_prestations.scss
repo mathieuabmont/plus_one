@@ -7,12 +7,36 @@
   border: 1px solid #F1E9E3;
   background-size: cover !important;
   padding: 10px;
-  margin: 20px auto 0;
-  width: 450px;
+  margin-top: 20px;
+  width: 100%;
   border-radius: 2px;
-  // display: flex;
-  // text-align: center;
+  display: flex;
+  text-align: center;
   height: 360px;
+  position: relative;
+}
+
+.card-details {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  h2 {
+    color: white;
+
+  }
+}
+
+.card-white-bottom {
+  // margin-left: 20px, auto, 0;
+  width: 100%;
+  border-radius: 2px;
+  display: flex;
+  text-align: center;
+  height: 360px;
+  background-color: white;
+  p {
+    color: black;
+  }
 }
 
 .card-form form {
@@ -74,5 +98,16 @@
   color: black;
   color: #767676;
   font-weight: bold;
+}
+
+
+.search-form {
+  margin-left: 30px;
+  width: 66%;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 

@@ -1,4 +1,17 @@
+<div class = "search-form">
+<%= form_tag prestations_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your Plus One"
+  %>
+<% end %>
+</div>
+
 <div class="wrapper">
+
+
+
   <div class="content-index">
 
     <div class="cards-container">

@@ -1,9 +1,9 @@
-<div class="card">
+<div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),  url('<%= cl_image_path prestation.user.picture, height: 300, width: 400, crop: :fill %>');">
   <div class="card-category"></div>
   <div class="card-description">
     <h2><%= prestation.user.first_name%></h2>
-    <p><%= prestation.price %></p>
-    <p><%= prestation.job %></p>
+    <p><b><%= prestation.job %></b></p>
+    <p><%= prestation.price %>€</p>
 </div>
   <%= link_to '', prestation_path(prestation), class:'card-link' %>
 </div>

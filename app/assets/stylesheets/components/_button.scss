@@ -1,5 +1,5 @@
 .btn-plusone {
-  color: linear-gradient(#FF4F61, #FF0108);
+  color: linear-gradient(45deg, #FF4F61, #FF0108);
   padding: 7px 10px;
   border-radius: 2px;
   font-weight: bold;
@@ -9,7 +9,7 @@
 
 .btn-plusone:hover {
   opacity: 1;
-  background: linear-gradient(#FF4F61, #FF0108);
+  background: linear-gradient(45deg, #FF4F61, #FF0108);
   opacity: 0,5;
   text-decoration: none;
   color: white;
