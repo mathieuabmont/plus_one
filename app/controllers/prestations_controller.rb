@@ -14,8 +14,8 @@ class PrestationsController < ApplicationController
     @markers = @prestations.map do |prestation|
       {
         lat: prestation.latitude,
-        lng: prestation.longitude#,
-       #infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        lng: prestation.longitude,
+        infoWindow: { content: render_to_string(partial: "/prestations/map_box", locals: { prestation: prestation }) }
 
       }
     end
