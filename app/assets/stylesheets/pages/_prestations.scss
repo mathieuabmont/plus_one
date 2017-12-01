@@ -4,14 +4,13 @@
 }
 
 .card-container {
-  border: 1px solid #F1E9E3;
+  // border: 1px solid #F1E9E3;
   background-size: cover !important;
   padding: 10px;
   margin-top: 20px;
-  width: 100%;
+  width: 75%;
   border-radius: 2px;
   display: flex;
-  text-align: center;
   height: 360px;
   position: relative;
 }
@@ -20,22 +19,36 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  justify-content: right;
   h2 {
     color: white;
-
+    margin-top: 10px;
+    padding: 0;
+  }
+  p {
+    position: absolute;
+    top: 296px;
+    right: 10px;
+    color: white;
+    font-size: 30px;
   }
 }
 
 .card-white-bottom {
   // margin-left: 20px, auto, 0;
-  width: 100%;
+  width: 75%;
+  border: 0.5px solid #D1D1D1;
+  justify-content: center;
   border-radius: 2px;
   display: flex;
-  text-align: center;
-  height: 360px;
+  height: 100%;
   background-color: white;
   p {
-    color: black;
+    color: #353535;
+    margin-top: 20px;
+    text-style: none;
+    text-shadow: none;
   }
 }
 
@@ -91,12 +104,8 @@
   }
 }
 
-#prestation_description{
-  margin-top: 20px;
-  text-style: none;
-  text-shadow: none;
-  color: black;
-  color: #767676;
-  font-weight: bold;
+#prestation_job {
+  font-size: 30px;
+  font-weight: 100;
 }
 
