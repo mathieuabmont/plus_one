@@ -2,6 +2,12 @@ class PrestationsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    if params[:query].present?
+          sql_query = "title ILIKE :query OR syllabus ILIKE :query"
+           @prestations = Prestation.where(sql_query, query: "%#{params[:query]}%")
+        else
+          @prestations = Prestation.all
+        end
     @prest = policy_scope(Prestation)
     @prestations = Prestation.where.not(latitude: nil, longitude: nil)
 
@@ -9,9 +15,11 @@ class PrestationsController < ApplicationController
       {
         lat: prestation.latitude,
         lng: prestation.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+       #infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+
       }
     end
+
   end
 
   def show
