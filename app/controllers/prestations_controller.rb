@@ -2,14 +2,12 @@ class PrestationsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    policy_scope(Prestation)
     if params[:query].present?
-      sql_query = "title ILIKE :query OR syllabus ILIKE :query"
-       @prestations = Prestation.where(sql_query, query: "%#{params[:query]}%")
+      @prestations = Prestation.where.not(latitude: nil, longitude: nil).where(job: params[:query])
     else
       @prestations = Prestation.all
     end
-    @prest = policy_scope(Prestation)
-    @prestations = Prestation.where.not(latitude: nil, longitude: nil)
 
     @markers = @prestations.map do |prestation|
       {
@@ -19,7 +17,6 @@ class PrestationsController < ApplicationController
 
       }
     end
-
   end
 
   def show
