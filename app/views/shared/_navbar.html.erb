@@ -11,7 +11,10 @@
 
       <!-- Links when logged in -->
       <%= link_to "Propose", new_prestation_path, :class => "btn-plusone btn-proposer" %>
-      <%= link_to "Home", new_prestation_path, :class => "btn-plusone btn-proposer" %>
+      <%= link_to "Home", prestations_path, :class => "btn-plusone btn-proposer" %>
+      <% unless current_user.bookings.empty? %>
+        <%= link_to "Dashboard", booking_path(current_user.bookings.last), :class => "btn-plusone btn-proposer" %>
+      <% end %>
 <!--       <%= link_to "Dashboard", "#", class: "navbar-wagon-item navbar-wagon-link" %>
  -->      <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
