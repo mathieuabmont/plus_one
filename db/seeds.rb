@@ -11,10 +11,16 @@ Prestation.destroy_all
 User.destroy_all
 
 p "creating users"
-  user1 = User.create(email: 'rachel@mail.com', age: 32, gender: "Female" , password: "password", first_name: 'Rachel', last_name: "Markle", picture: "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969122/zz12gka0dadceixpw0a7.jpg")
+url = "http://res.cloudinary.com/dfosxgid7/image/upload/v1511969122/zz12gka0dadceixpw0a7.jpg"
+  user1 = User.new(email: 'rachel@mail.com', age: 32, gender: "Female" , password: "password", first_name: 'Rachel', last_name: "Markle")
+  user1.remote_picture_url = url
   user1.save
-  user2 = User.create(email:'harry@mail.com' , age: 29, gender: "Male", password: "password", first_name: "Prince", last_name: "Harry")
-  user3 = User.create(email:'anonyme@mail.com' , age: 30, gender: "Male" , password: "password", first_name: 'James', last_name: "Jonson")
+  user2 = User.new(email:'harry@mail.com' , age: 29, gender: "Male", password: "password", first_name: "Prince", last_name: "Harry")
+  user2.remote_picture_url = url
+  user2.save
+  user3 = User.new(email:'anonyme@mail.com' , age: 30, gender: "Male" , password: "password", first_name: 'James', last_name: "Jonson")
+  user3.remote_picture_url = url
+  user3.save
 
 p "users - done"
 
@@ -59,7 +65,7 @@ p "creating prestations"
   prestation8.user = user3
   #prestation8.remote_photo_url = url8
   prestation8.save!
-p "flats - done"
+p "prestations - done"
 p "creating bookings"
   booking1 = Booking.new(user_id: 2, prestation_id: 1, description: "Hello i would really need you, because my grandmother is soon to die, and she really wants me to have a wife since my big brother William is married and has two kids. However i'm not at all ready, i'd would really appreciate your help for a couple of weeks.", date: "2017-12-1", end_date: "2017-12-31", location: "London")
   booking2 = Booking.new(user_id: 1, prestation_id: 1, description: "2", date: "18/01/2016", end_date: "20/02/2016", location: "London")

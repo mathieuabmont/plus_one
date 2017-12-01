@@ -1,6 +1,7 @@
 .card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  // background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://res.cloudinary.com/dfjd5sbad/image/upload/v1511968719/emghxa2ioidbq0etjfxd.jpg);
   background-size: cover !important;
   background-position: center;
   color: white;
@@ -8,15 +9,14 @@
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 15px;
-  // background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://res.cloudinary.com/dfjd5sbad/image/upload/v1511968719/emghxa2ioidbq0etjfxd.jpg);
 }
-.card-background {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 60px;
-  border-radius: 50%;
-}
+// .card-background {
+//   position: absolute;
+//   right: 10px;
+//   top: 10px;
+//   width: 60px;
+//   border-radius: 50%;
+// }
 .card-category {
   position: absolute;
   top: 10px;
