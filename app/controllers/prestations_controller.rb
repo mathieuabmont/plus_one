@@ -3,7 +3,8 @@ class PrestationsController < ApplicationController
 
   def index
     if params[:query].present?
-          @prestations = Prestation.where(job: params[:query])
+          sql_query = "title ILIKE :query OR syllabus ILIKE :query"
+           @prestations = Prestation.where(sql_query, query: "%#{params[:query]}%")
         else
           @prestations = Prestation.all
         end
@@ -14,7 +15,8 @@ class PrestationsController < ApplicationController
       {
         lat: prestation.latitude,
         lng: prestation.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+       #infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+
       }
     end
 
