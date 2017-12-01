@@ -1,17 +1,20 @@
-<div class="container">
-  <div class="content">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="card-form">
-          <% if current_user %>
-            <%= simple_form_for @prestation do |f| %>
-              <%= f.input :price, placeholder: "150 €" %>
-              <%= f.input :description, placeholder: "Describe yourself" %>
-              <%= f.input :job, collection: ["Kid", "Wife", "Lawyer", "Farmer", "Prince"] %>
-              <%= f.input :location, placeholder: "Bordeaux" %>
-              <%= f.submit "Add a prestation", class: "btn btn-primary"%>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),url(<%= image_path 'apple.jpg' %>);">
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <h2>Offer your services</h2>
+        <div class="col-xs-12">
+          <div class="card-form">
+            <% if current_user %>
+              <%= simple_form_for @prestation do |f| %>
+                <%= f.input :price, placeholder: "150 €" %>
+                <%= f.input :description, placeholder: "Describe yourself" %>
+                <%= f.input :job, collection: ["Kid", "Wife", "Lawyer", "Farmer", "Prince"] %>
+                <%= f.input :location, placeholder: "Bordeaux" %>
+                <%= f.submit "Add", class: "btn-new-prestation"%>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>

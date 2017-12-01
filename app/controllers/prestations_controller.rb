@@ -3,11 +3,11 @@ class PrestationsController < ApplicationController
 
   def index
     if params[:query].present?
-          sql_query = "title ILIKE :query OR syllabus ILIKE :query"
-           @prestations = Prestation.where(sql_query, query: "%#{params[:query]}%")
-        else
-          @prestations = Prestation.all
-        end
+      sql_query = "title ILIKE :query OR syllabus ILIKE :query"
+       @prestations = Prestation.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @prestations = Prestation.all
+    end
     @prest = policy_scope(Prestation)
     @prestations = Prestation.where.not(latitude: nil, longitude: nil)
 
