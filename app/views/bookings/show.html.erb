@@ -26,6 +26,22 @@
   </div>
   <hr>
 
+  <h3> All your bookings </h3>
+
+  <div class="cards-container">
+    <div class="row">
+      <div class="card" id="card-index">
+        <% @bookings.each do |booking| %>
+          <div class="col-xs-12 col-sm-3">
+            <%= render 'shared/card', booking.user: booking.user %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
   h3> Looking for another plus one? </h3>
 
   <div class="cards-container">
